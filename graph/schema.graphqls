@@ -1,0 +1,22 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+type Link {
+  id: ID!
+  name: String!
+  url: String!
+}
+
+type Query {
+  links: [Link!]!
+}
+
+input NewLink {
+  name: String!
+  url: String!
+}
+
+type Mutation {
+  createLink(input: NewLink!): Link!
+}

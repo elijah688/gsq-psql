@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  gql:
+    build: .
+    stdin_open: true
+    tty: true
+    working_dir: /gql
+    container_name: gql
+    environment:
+      HOST:
+      DBPORT:
+      DBUSER:
+      NAME: 
+      PASS: 
+    ports:
+      - "8080:8080"
+    volumes:
+      - ${PWD}/scripts:/gql/scripts
+  psql:
+    image: postgres:14.1-alpine
+    container_name: psql
+    working_dir: /psql
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - '5432:5432'
+    volumes: 
+      - ${PWD}/junk:/var/lib/postgresql/data
