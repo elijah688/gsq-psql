@@ -1,3 +1,3 @@
 {
-  "query": "mutation { createLink( input: {name: \"xhamster\", url:  \"https://xhamster.com\" } ) { name url } }"
+  "query": "mutation { createLink( input: {name: \"cn\", url:  \"https://cartoonnetwork.net\" } ) { name url } }"
 }
